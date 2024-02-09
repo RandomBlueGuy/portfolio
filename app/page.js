@@ -13,7 +13,7 @@ function page() {
       <div className='fixed  z-0 m-auto inset-0 mix-blend-overlay bg-url w-full h-full' />
       {/* <div className='absolute m-auto inset-0 mix-blend-overlay bg-url w-full h-full opacity-80' /> */}
 
-      <Navigation />
+      {/* <Navigation /> */}
       <MainCTN />
       {/* <MicroContact /> */}
       {/* <IntroComponent />
