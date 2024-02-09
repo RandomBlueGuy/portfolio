@@ -1,32 +1,56 @@
+'use client';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Navigation = () => {
-  return (
-    <nav className='absolute top-0 w-full h-[40px] bg-black/20 flex justify-end items-center font-bold font-tag text-[#346596]'>
-      <figure className='w-full h-full border-b-[#346596] border-b-2' />
+  const [selection, setSelection] = useState(1);
+  const [currentWidth, setCurrentWidth] = useState(55);
+  useEffect(() => {
+    const newWidth = 55 + selection * 8;
+    setCurrentWidth(newWidth);
+  }, [selection, currentWidth]);
 
+  return (
+    <nav className='fixed z-50 top-0 w-full h-[60px]  flex justify-end items-center font-bold font-tag text-[#346596] backdrop-blur-sm'>
+      <figure
+        className='transition-all duration-300 absolute bottom-0 left-0 h-[2px] border-b-[#346596] border-b-2'
+        style={{ width: `${currentWidth}%` }}
+      />
       <div className='flex justify-end items-center w-[40%] h-full text-right'>
         <Link
-          href={'#About'}
-          className='flex flex-1 items-center justify-end h-full hover:border-b-[#346596] hover:border-b-2'>
+          href={'#home'}
+          onClick={() => setSelection(1)}
+          className='flex flex-1 items-end pb-[10px] justify-end h-full'>
+          00. Home
+        </Link>
+
+        <Link
+          href={'#about'}
+          onClick={() => setSelection(2)}
+          className='flex flex-1 items-end pb-[10px] justify-end h-full'>
           01. About
         </Link>
+
         <Link
-          href={'#About'}
-          className='flex flex-1 items-center justify-end h-full hover:border-b-[#346596] hover:border-b-2'>
+          href={'#skills'}
+          onClick={() => setSelection(3)}
+          className='flex flex-1 items-end pb-[10px] justify-end h-full'>
           02. Skills
         </Link>
         <Link
-          href={'#About'}
-          className='flex flex-1 items-center justify-end h-full hover:border-b-[#346596] hover:border-b-2'>
+          href={'#work'}
+          onClick={() => setSelection(4)}
+          className='flex flex-1 items-end pb-[10px] justify-end h-full'>
           03. Work
         </Link>
         <Link
-          href={'#About'}
-          className='flex flex-1 items-center justify-end h-full hover:border-b-[#346596] hover:border-b-2'>
+          href={'#contact'}
+          onClick={() => setSelection(5)}
+          className='flex flex-1 items-end pb-[10px] justify-end h-full'>
           04. Contact
         </Link>
       </div>
+      <div className='w-[5%]'></div>
     </nav>
   );
 };

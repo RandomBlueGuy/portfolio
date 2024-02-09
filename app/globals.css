@@ -5,12 +5,19 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
 @layer base {
-  html {
+  html,
+  body {
     @apply scroll-smooth;
   }
   body {
-    @apply min-h-screen max-h-screen text-base bg-gradient-to-r from-[#040e17] to-[#021223];
+    @apply text-base;
   }
   h1,
   h2 {
@@ -27,7 +34,13 @@
   }
   a:hover,
   span:hover {
-    @apply text-selected ;
+    @apply text-selected;
   }
 }
+
+/* @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+} */
 

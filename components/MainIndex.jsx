@@ -1,13 +1,31 @@
-import React from 'react';
+'use client';
 import Link from 'next/link';
+import { useRef } from 'react';
+import React from 'react';
 import MenuElement from './MenuElement';
 import SkillsComponent from './SkillsComponent';
+import IntroComponent from './IntroComponent';
 
 const MainIndex = () => {
+  const scrollContainerRef = useRef(null);
+
+  const handleWheelScroll = (event) => {
+    event.preventDefault();
+    const delta = event.deltaY || event.detail || event.wheelDelta;
+
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft += delta;
+    }
+  };
+  
   return (
-    <>
-      <section className='relative z-10 w-[20%] min-h-full bg-gray-800/20 px-[30px] py-[30px]'>
-        <nav className='flex flex-col min-h-full   relative'>
+    <div
+      ref={scrollContainerRef}
+      onWheel={handleWheelScroll}
+      style={{ scrollSnapType: 'x proximity' }}
+      className='w-full h-screen relative flex flex-nowrap overflow-x-auto justify-start bg-gradient-to-r from-[#040e17] to-[#021223]'>
+      <section className='relative z-10 w-[20%] max-h-full bg-gray-800/20 px-[30px] py-[30px]'>
+        <nav id='About' className='flex flex-col min-h-full   relative'>
           <span className=' text-xs'>{`<html>`}</span>
           <span className=' text-xs pl-5'>{`<body>`}</span>
           <MenuElement mlink={'#RandomBlueFolio_'} title={'RandomBlueFolio_'} hType={'h1'} />
@@ -58,8 +76,7 @@ const MainIndex = () => {
           <span className=' text-xs'>{`</html>`}</span>
         </nav>
       </section>
-
-      <section className='relative z-10 w-[80%] min-h-full px-[30px] py-[30px] bg-gray-800/30 '>
+      <section className='relative z-10 w-[80%] max-h-full px-[30px] py-[30px] bg-gray-800/30 '>
         <div className='flex flex-col items-center gap-[12px] w-fit absolute bottom-0 right-0 font-title translate-x-[50%]'>
           <div className='w-[20px] aspect-square border-[2px] border-white rounded-full' />
           <div className='w-[20px] aspect-square border-[2px] border-white rounded-full' />
@@ -74,7 +91,13 @@ const MainIndex = () => {
 
         <SkillsComponent />
       </section>
-    </>
+      <IntroComponent />
+      <IntroComponent />
+      <div className="w-[100vw] h-[500px] bg-red-500 scroll-snap-child"></div>
+      <div className="w-[100vw] scroll-snap-child"></div>
+      <div className="w-[100vw] scroll-snap-child"></div>
+
+    </div>
   );
 };
 

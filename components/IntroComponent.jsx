@@ -1,12 +1,12 @@
-import React from 'react';
-
 const IntroComponent = () => {
   return (
-    <div className='w-[100VW] h-full flex flex-col justify-center items-center gap-[60px]'>
-      <h1 className='text-10xl text-vWhite font-tag font-bold border-y-[2px] px-[60px] [text-shadow:10px_0px_0px_#0456ae]'>
-        Kill me
+    <div
+      id='intro'
+      className='bg-blac k/20 w-full h-screen flex flex-col justify-center items-center  relative'>
+      <h1 className='text-8xl text-vWhite font-tag font-bold border-y-[2px] py-[8px] px-[60px] mb-[30px] [text-shadow:5px_0px_0px_#0456ae]'>
+        Andrés Vélez
       </h1>
-      <p className='text-2xl text-vWhite font-tag'>Just fucking do it.</p>
+      <p className='font-tag text-2xl text-vWhite'>Web Developer & Audiovisual Communicator</p>
     </div>
   );
 };
