@@ -20,9 +20,12 @@ body {
     @apply text-base;
   }
   h1,
-  h2 {
-    @apply text-[#346596] font-title;
+  h2,
+  h3,
+  h4 {
+    @apply text-[#346596] font-title font-bold;
   }
+
   /* span {
     @apply text-vGray font-tag italic leading-none opacity-50;
   } */
@@ -30,11 +33,17 @@ body {
     @apply text-vGray font-tag;
   }
   p {
-    @apply font-main;
+    @apply font-main text-vWhite;
   }
-  a:hover,
-  span:hover {
+  a:hover {
     @apply text-selected;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #346596;
+    text-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
   }
 }
 

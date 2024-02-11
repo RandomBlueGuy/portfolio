@@ -44,12 +44,12 @@ const MainCTN = () => {
           />
           <div className='flex justify-end items-center w-[40%] h-full text-right'>
             <Link
-              href={'#home'}
+              href={'#intro'}
               onClick={() => setSelection(1)}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
                 selection === 1 ? 'text-selected' : 'text-vTitle'
               }`}>
-              00. Home
+              00. Intro
             </Link>
 
             <Link
@@ -97,7 +97,7 @@ const MainCTN = () => {
       <ContactComponent />
 
       <Link
-        href={scrollDirection ? '#about' : '#home'}
+        href={scrollDirection ? '#about' : '#intro'}
         className={`[writing-mode:vertical-lr] font-title animate-pulse fixed bottom-[50px] right-[50px] text-vWhite transition-all duration-300 ${
           !scrollDirection ? 'rotate-180' : 'rotate-0'
         }`}>
