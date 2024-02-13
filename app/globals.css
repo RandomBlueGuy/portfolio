@@ -14,8 +14,9 @@ body {
 @layer base {
   html,
   body {
-    @apply scroll-smooth;
+    @apply scroll-smooth box-border;
   }
+
   body {
     @apply text-base;
   }
@@ -26,9 +27,9 @@ body {
     @apply text-[#346596] font-title font-bold;
   }
 
-  /* span {
-    @apply text-vGray font-tag italic leading-none opacity-50;
-  } */
+  button {
+    @apply transition-all duration-300 active:scale-[0.98] hover:scale-[1.02] cursor-pointer;
+  }
   li {
     @apply text-vGray font-tag;
   }
@@ -44,6 +45,28 @@ body {
   }
   .font-outline-4 {
     -webkit-text-stroke: 4px black;
+  }
+  @media only screen and (min-width: 1536px) {
+    html {
+      zoom: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 2160px) {
+    html {
+      zoom: 130%;
+    }
+  }
+
+  @media only screen and (min-width: 3000px) {
+    html {
+      zoom: 200%;
+    }
+  }
+  @media only screen and (min-width: 4000px) {
+    html {
+      zoom: 250%;
+    }
   }
 }
 

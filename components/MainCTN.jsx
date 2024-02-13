@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import SkillsComponent from './SkillsComponent';
 import IntroComponent from './IntroComponent';
 import AboutComponent from './AboutComponent';
 import SkillzComponent from './SkillzComponent';
@@ -32,10 +31,10 @@ const MainCTN = () => {
   }, []);
 
   return (
-    <div className='w-full relative flex flex-col gap-[500px] justify-start items-center'>
+    <div className='w-full relative flex flex-col justify-start items-center'>
       <nav
         className={`w-full h-[60px] fixed z-50 top-0 transition-all duration-300 ${
-          !scrollDirection ? 'backdrop-blur-[50px] bg-[#041e3a]/70' : ''
+          !scrollDirection ? 'backdrop-blur-[20px] bg-[#041e3a]/70' : ''
         }`}>
         <div className='w-full h-full  flex justify-end items-center font-bold font-tag'>
           <figure

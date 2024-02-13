@@ -9,7 +9,7 @@ import MainCTN from '@/components/MainCTN';
 
 function page() {
   return (
-    <main className='w-full relative bg-gradient-to-br from-[#040e17] via-[#041d38] to-[#041e3a]'>
+    <main className='w-full relative bg-gradient-to-br from-[#040e17] via-[#041d38] to-[#041e3a] px-[15%]'>
       <div className='fixed  z-0 m-auto inset-0 mix-blend-overlay bg-url w-full h-full' />
       {/* <div className='absolute m-auto inset-0 mix-blend-overlay bg-url w-full h-full opacity-80' /> */}
 

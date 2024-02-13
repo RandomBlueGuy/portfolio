@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import React from 'react';
 import MenuElement from './MenuElement';
-import SkillsComponent from './SkillsComponent';
 import IntroComponent from './IntroComponent';
 
 const MainIndex = () => {
@@ -89,7 +88,6 @@ const MainIndex = () => {
           <figure className='bg-white h-[100px] w-[1.5px]' />
         </div>
 
-        <SkillsComponent />
       </section>
       <IntroComponent />
       <IntroComponent />
