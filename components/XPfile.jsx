@@ -14,8 +14,8 @@ const XPfile = ({ index, project }) => {
         }}
         className='group cursor-pointer z-10 relative border-b-2 text-vBlue flex items-center justify-between w-full px-[20px] py-[5px] border-b-vBlue/20 overflow-hidden transition-all duration-300 '>
         <div
-          className={`-z-0 w-[0%] group-hover:w-[100%] left-0 transition-all  ease-in h-full absolute top-0 ${
-            index % 2 === 0 ? ' duration-500' : ' duration-300'
+          className={`-z-0 w-[0%] group-hover:w-[100%] left-0 transition-all ease-[cubic-bezier(0.5,1,0.5,1)] h-full absolute top-0 ${
+            index % 2 === 0 ? ' duration-1000' : 'duration-[1000ms]'
           } bg-vBlue/30`}
           style={{ pointerEvents: 'none' }}
         />
