@@ -14,23 +14,25 @@ const MicroContact = () => {
           className='translate-x-[10%] w-[20px] hover:scale-125 transition-all duration-300 aspect-square rounded-full'
         />
       </Link>
-      <Link href={"https://www.linkedin.com/in/andres-camilo-velez/"}>
-      <Image
-        src={linkedin}
-        alt='linkedin icon'
-        className='translate-x-[10%] w-[20px] hover:scale-125 transition-all duration-300 aspect-square rounded-full'
-      />      </Link>
+      <Link href={'https://www.linkedin.com/in/andres-camilo-velez/'}>
+        <Image
+          src={linkedin}
+          alt='linkedin icon'
+          className='translate-x-[10%] w-[20px] hover:scale-125 transition-all duration-300 aspect-square rounded-full'
+        />
+      </Link>
 
-            <Link href={'mailto:randombluemail@gmail.com'}>
-      <Image
-        src={mail}
-        alt='mail icon'
-        className='translate-x-[10%] w-[20px] hover:scale-125 transition-all duration-300 aspect-square rounded-full'
-      />      </Link>
+      <Link href={'mailto:randombluemail@gmail.com'}>
+        <Image
+          src={mail}
+          alt='mail icon'
+          className='translate-x-[10%] w-[20px] hover:scale-125 transition-all duration-300 aspect-square rounded-full'
+        />
+      </Link>
 
       <Link
         href={'mailto:randombluemail@gmail.com'}
-        className='text-selected leading-none rotate-180  transition-all duration-500 [writing-mode:vertical-rl]'>
+        className='text-selected leading-none rotate-180 transition-all duration-500 [writing-mode:vertical-rl]'>
         randombluemail@gmail.com
       </Link>
       <figure className='bg-[#346596] h-[40px] w-[1.5px]' />

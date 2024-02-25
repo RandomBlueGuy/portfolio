@@ -11,7 +11,7 @@ import reactIcon from '@/public/react.svg';
 import shopifyIcon from '@/public/shopify.svg';
 import tailwindIcon from '@/public/tailwind.svg';
 import openBracket from '@/public/openBracket.svg';
-
+import TitleText from './TitleText';
 import cIcon from '@/public/cIcon.svg';
 import cSharpIcon from '@/public/cSharpIcon.svg';
 import gameMakerIcon from '@/public/gameMakerIcon.svg';
@@ -48,19 +48,15 @@ const SkillzComponent = () => {
       id='skills'
       className='relative w-full h-fit flex flex-shrink-0 flex-col justify-center items-center py-[200px]'>
       <div className='w-full  flex flex-col'>
-        <h2 className='mix-blend-screen relative font-tag font-bold text-7xl text-vWhite mb-[50px]'>
-          <span className='-z-10 box-content  leading-none text-10xl text-transparent font-outline-2 font-title font-bold'>
-            02.
-          </span>
-          <span className='z-0 absolute bottom-0 left-0 translate-x-[40%]'>Skills / Tools</span>
-        </h2>
+        <TitleText num={'02.'} nTitle={'Skills'} />
+
         <p className='my-[50px] font-tag text-xl'>
           // These are some of the programs/languages/tools I have picked along the way
         </p>
         <div className='my-[60px] w-full flex items-center justify-center gap-[50px]'>
           <Image src={openBracket} alt='openBracket' className='mix-blend-screen' />
 
-          <div className='flex w-full gap-[40px] gap-y-[20px] h-fit justify-around flex-wrap '>
+          <div className='flex w-full gap-[40px] gap-y-[60px] h-fit justify-around flex-wrap '>
             {mainTools.map((item, index) => (
               <div
                 key={index}
@@ -68,9 +64,11 @@ const SkillzComponent = () => {
                 <Image
                   src={item.img}
                   alt={`${item.name}`}
+                  quality={100}
+                  sizes='5vw'
                   className='object-contain h-[80px] w-auto'
                 />
-                <p className='text-vWhite font-title opacity-0 translate-y-[-60%] group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300'>{`${item.name}`}</p>
+                <p className='absolute bottom-0 text-vWhite font-title opacity-0 translate-y-[0%] group-hover:translate-y-[120%] group-hover:opacity-100 transition-all duration-300'>{`${item.name}`}</p>
               </div>
             ))}
           </div>
@@ -88,13 +86,14 @@ const SkillzComponent = () => {
             {secondaryTools.map((item, index) => (
               <div
                 key={index}
-                className='group flex flex-col h-[80px] gap-[10px] items-center opacity-60 hover:scale-105 hover:opacity-100 transition-all duration-300'>
+                className='group flex flex-col h-[60px] gap-[10px] items-center opacity-60 hover:scale-105 hover:opacity-100 transition-all duration-300'>
                 <Image
                   src={item.img}
                   alt={`${item.name}`}
+                  quality={100}
                   className='object-contain h-[60px] w-auto '
                 />
-                <p className='text-vWhite font-title opacity-0 translate-y-[-60%] group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300'>{`${item.name}`}</p>
+                <p className='absolute bottom-0 text-vWhite font-title opacity-0 translate-y-[0%] group-hover:translate-y-[120%] group-hover:opacity-100 transition-all duration-300'>{`${item.name}`}</p>
               </div>
             ))}
           </div>

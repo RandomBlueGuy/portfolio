@@ -6,7 +6,6 @@ import AboutComponent from './AboutComponent';
 import SkillzComponent from './SkillzComponent';
 import ContactComponent from './ContactComponent';
 import WorkComponent from './WorkComponent';
-import Navigation from '@/components/Navigation';
 
 const MainCTN = () => {
   const [scrollDirection, setScrollDirection] = useState(true);
@@ -31,12 +30,12 @@ const MainCTN = () => {
   }, []);
 
   return (
-    <div className='w-full relative flex flex-col justify-start items-center'>
+    <div className=' w-full relative flex flex-col justify-start items-center'>
       <nav
         className={`w-full h-[60px] fixed z-50 top-0 transition-all duration-300 ${
-          !scrollDirection ? 'backdrop-blur-[20px] bg-[#041e3a]/70' : ''
+          !scrollDirection ? 'backdrop-blur-[12px] bg-[#041e3a]/70' : ''
         }`}>
-        <div className='w-full h-full  flex justify-end items-center font-bold font-tag'>
+        <div className='w-full h-full  flex justify-end items-center font-bold font-title'>
           <figure
             className='transition-all duration-300 flex justify-center items-center absolute bottom-0 left-0 h-[2px] bg-selected'
             style={{ width: `${currentWidth}%` }}

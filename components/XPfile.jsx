@@ -1,38 +1,41 @@
 'use client';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import plusSign from '@/public/plus.svg';
 
-const XPfile = () => {
+const XPfile = ({ index, project }) => {
   const [viewMore, setViewMore] = useState(false);
-
-  useEffect(() => {}, [viewMore]);
-
-  console.log('🔷 / XPfile / viewMore =>', viewMore);
-
   return (
-    <>
-      <figure className='border-b-2 text-vBlue flex items-center justify-between w-full px-[20px] py-[10px] border-b-vBlue overflow-hidden transition-all duration-300 hover:bg-vBlue/30'>
+    <div className='w-full  overflow-hidden relative transition-all duration-300 '>
+      <figure
+        onClick={() => {
+          setViewMore(!viewMore);
+        }}
+        className='group cursor-pointer z-10 relative border-b-2 text-vBlue flex items-center justify-between w-full px-[20px] py-[5px] border-b-vBlue/20 overflow-hidden transition-all duration-300 '>
+        <div
+          className={`-z-0 w-[0%] group-hover:w-[100%] left-0 transition-all  ease-in h-full absolute top-0 ${
+            index % 2 === 0 ? ' duration-500' : ' duration-300'
+          } bg-vBlue/30`}
+          style={{ pointerEvents: 'none' }}
+        />
         <h3 className='text-selected'>[ INSERT COOL PROJECT TITLE ]</h3>
-        <button
-          onClick={() => {
-            setViewMore(!viewMore);
-          }}
-          className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px]'>
-          <div
-            className='-z-0 w-[0%] group-hover:w-[100%] transition-all duration-500 h-full absolute top-0 left-0 bg-selected rounded-[5px]'
-            style={{ pointerEvents: 'none' }}
-          />
-          <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
-            View More
+        <button className='relative box-border transition-all duration-300 hover:border-0 text-vWhite font-bold font-tag w-auto h-[40px] aspect-square px-[12px]'>
+          <span
+            className={`${
+              !viewMore ? 'rotate-0' : ' rotate-[135deg]'
+            } transition-all duration-300  absolute inset-0 z-10 w-full h-full flex justify-center items-center text-vWhite`}>
+            <Image src={plusSign} alt='' className='h-[60%] w-auto object-contain' />
           </span>
         </button>
       </figure>
       <div
-        className={`w-full bg-black/30 p-[20px] flex gap-[2rem] overflow-hidden transition-all duration-300 ${
-          !viewMore ? 'hidden' : 'block'
+        className={` w-full bg-black/30 p-[20px] flex gap-[2rem] overflow-hidden transition-all duration-300 ${
+          !viewMore ? 'absolute' : 'relative'
         }`}>
-        <div className='relative aspect-square w-auto h-[300px] bg-gradient-to-br flex justify-center items-center'>
+        <figure className='relative rounded-xl border-2 border-selected/20 aspect-square w-auto h-[300px] bg-gradient-to-br flex justify-center items-center'>
           <span className='text-7xl font-title text-vWhite/20'>[ IMG ]</span>
-        </div>
+        </figure>
         <div className='w-full flex flex-col justify-between'>
           <div>
             <h4 className='text-selected mb-[20px] text-2xl'>[ Description ]</h4>
@@ -81,7 +84,7 @@ const XPfile = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

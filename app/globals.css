@@ -10,6 +10,10 @@ body {
 }
 
 @layer base {
+  ::selection {
+    @apply bg-selected/20;
+  }
+
   html,
   body {
     @apply scroll-smooth box-border;
@@ -25,8 +29,8 @@ body {
     @apply text-[#346596] font-title font-bold;
   }
 
-  span{
-    @apply text-vWhite
+  span {
+    @apply text-vWhite;
   }
 
   button {
@@ -44,6 +48,15 @@ body {
   }
   .font-outline-4 {
     -webkit-text-stroke: 4px black;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -moz-user-drag: none;
+    -ms-user-select: none;
+    user-drag: none;
   }
   /* @media only screen and (min-width: 1536px) {
     html {

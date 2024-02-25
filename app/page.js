@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Vortex from '@/components/Vortex';
-import Navigation from '@/components/Navigation';
 import IntroComponent from '@/components/IntroComponent';
 import MainIndex from '@/components/MainIndex';
 import MicroContact from '@/components/MicroContact';
@@ -9,12 +8,9 @@ import MainCTN from '@/components/MainCTN';
 
 function page() {
   return (
-    <main className='w-full relative bg-gradient-to-br from-[#040e17] via-[#041d38] to-[#041e3a] px-[15%]'>
-      
+    <main className='w-full relative overflow-hidden bg-gradient-to-br from-[#040e17] via-[#041d38] to-[#041e3a] px-[15%]'>
       <div className='fixed m-auto inset-0 mix-blend-overlay bg-url w-full h-full' />
       {/* <div className='absolute m-auto inset-0 mix-blend-overlay bg-url w-full h-full opacity-80' /> */}
-
-      {/* <Navigation /> */}
       <MainCTN />
       {/* <MicroContact /> */}
       {/* <IntroComponent />
