@@ -48,7 +48,7 @@ const SkillzComponent = () => {
       id='skills'
       className='relative w-full h-fit flex flex-shrink-0 flex-col justify-center items-center py-[200px]'>
       <div className='w-full  flex flex-col'>
-        <h2 className='relative font-tag font-bold text-7xl text-vWhite mb-[50px]'>
+        <h2 className='mix-blend-screen relative font-tag font-bold text-7xl text-vWhite mb-[50px]'>
           <span className='-z-10 box-content  leading-none text-10xl text-transparent font-outline-2 font-title font-bold'>
             02.
           </span>
@@ -57,8 +57,8 @@ const SkillzComponent = () => {
         <p className='my-[50px] font-tag text-xl'>
           // These are some of the programs/languages/tools I have picked along the way
         </p>
-        <div className='my-[60px] w-full flex items-center justify-center gap-[80px]'>
-          <Image src={openBracket} alt='openBracket' className='' />
+        <div className='my-[60px] w-full flex items-center justify-center gap-[50px]'>
+          <Image src={openBracket} alt='openBracket' className='mix-blend-screen' />
 
           <div className='flex w-full gap-[40px] gap-y-[20px] h-fit justify-around flex-wrap '>
             {mainTools.map((item, index) => (
@@ -74,7 +74,7 @@ const SkillzComponent = () => {
               </div>
             ))}
           </div>
-          <Image src={openBracket} alt='closeBracket' className='rotate-180 ' />
+          <Image src={openBracket} alt='closeBracket' className='rotate-180 mix-blend-screen' />
         </div>
 
         <p className='my-[50px] font-tag text-xl'>
@@ -82,8 +82,8 @@ const SkillzComponent = () => {
           Modding ]{' '}
         </p>
 
-        <div className='my-[60px] w-full flex items-center gap-[80px] justify-center'>
-          <Image src={openBracket} alt='openBracket' className=' h-[200px]' />
+        <div className='my-[60px] w-full flex items-center justify-center'>
+          <Image src={openBracket} alt='openBracket' className='mix-blend-screen h-[200px]' />
           <div className='flex w-fit gap-[40px] h-[60%] justify-around flex-wrap'>
             {secondaryTools.map((item, index) => (
               <div
@@ -98,7 +98,11 @@ const SkillzComponent = () => {
               </div>
             ))}
           </div>
-          <Image src={openBracket} alt='closeBracket' className='rotate-180 h-[200px]' />
+          <Image
+            src={openBracket}
+            alt='closeBracket'
+            className='mix-blend-screen rotate-180 h-[200px]'
+          />
         </div>
       </div>
     </div>

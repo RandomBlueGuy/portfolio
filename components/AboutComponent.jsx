@@ -4,9 +4,9 @@ const ContactComponent = () => {
   return (
     <div
       id='about'
-      className=' py-[130px]  w-full bg-black/30 h-fit flex flex-shrink-0 flex-col justify-center items-start gap-[60px]'>
+      className=' py-[130px]  w-full h-fit flex flex-shrink-0 flex-col justify-center items-start gap-[60px]'>
       <div className='w-[500px] '>
-        <h2 className='relative font-tag font-bold text-7xl text-vWhite mb-[50px]'>
+        <h2 className='mix-blend-screen relative font-tag font-bold text-7xl text-vWhite mb-[50px]'>
           <span className='-z-10 box-content  leading-none text-10xl text-transparent font-outline-2 font-title font-bold'>
             01.
           </span>
