@@ -36,7 +36,7 @@ const XPfile = ({ index, project }) => {
         <figure className='relative rounded-xl border-2 border-selected/20 aspect-square w-auto h-[300px] bg-gradient-to-br flex justify-center items-center'>
           <span className='text-7xl font-title text-vWhite/20'>[ IMG ]</span>
         </figure>
-        <div className='w-full flex flex-col justify-between'>
+        <div className='w-full flex flex-col justify-between pt-[0.5rem]'>
           <div>
             <h4 className='text-selected mb-[20px] text-2xl'>[ Description ]</h4>
             <p className='text-base'>

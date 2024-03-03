@@ -12,20 +12,29 @@ const MainCTN = () => {
   const [selection, setSelection] = useState(1);
   const [currentWidth, setCurrentWidth] = useState(55);
 
+
+
   useEffect(() => {
     const newWidth = 55 + selection * 8 + 0.5;
     setCurrentWidth(newWidth);
   }, [selection, currentWidth]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolledDown = window.scrollY > 200;
-      setScrollDirection(!scrolledDown);
+
+    const changeBackground = () => {
+      if (window.scrollY < 200) {
+        setScrollDirection(true);
+      } else {
+        setScrollDirection(false);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    changeBackground();
+
+    window.addEventListener('scroll', changeBackground);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
@@ -106,7 +115,3 @@ const MainCTN = () => {
 };
 
 export default MainCTN;
-
-{
-  /* </div> */
-}

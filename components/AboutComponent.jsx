@@ -10,10 +10,18 @@ const ContactComponent = () => {
         <figure className='absolute inset-0 mix-blend-screen  bg-[radial-gradient(rgba(0,100,255,0.4)_0%,rgba(0,100,255,0.1))] h-full opacity-70 rounded-full blur-[90px] aspect-square' />
         <div className='absolute w-[400px] animate-[spin_60000ms_linear_infinite]  aspect-square border-4 border-selected border-dashed rounded-full' />
         <div className='absolute w-[200px] animate-[spin_60000ms_linear_infinite] mix-blend-overlay aspect-square border-4 border-selected border-dashed rounded-full' />
+        <span className='text-5xl'>
+          AVATAR BRUJOMÀGICO
+          <br />
+          <br />
+          https://sunsquarez.github.io/
+          <br />
+          <br />
+          https://www.warner.codes/
+        </span>
       </div>
-      <div className='z-10 w-[600px] '>
+      <div className='z-10 w-[600px]'>
         <TitleText num={'01.'} nTitle={'About Me'} />
-
         <p className='pl-[3rem]'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Cras semper auctor neque vitae tempus quam pellentesque
