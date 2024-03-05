@@ -43,12 +43,19 @@ module.exports = {
         selected: 'rgba(0,200,255)',
       },
       animation: {
-        spinner: 'spinner 5s linear infinite',
+        'spinner': 'spinner 60s linear infinite',
+        'reversespin': 'reverse-spin 6s linear infinite',
       },
       keyframes: {
-        spinner: {
+        'spinner': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(-360deg)' },
+        },
+        'reverse-spin': {
+          from: {
+            '0%': { transform: 'rotate(0deg)' },
+            '100%': { transform: 'rotate(-360deg)' },
+          },
         },
       },
     },

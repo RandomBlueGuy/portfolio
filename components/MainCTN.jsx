@@ -11,16 +11,14 @@ const MainCTN = () => {
   const [scrollDirection, setScrollDirection] = useState(true);
   const [selection, setSelection] = useState(1);
   const [currentWidth, setCurrentWidth] = useState(55);
-
-
+  const [currentSection, setCurrentSection] = useState('');
 
   useEffect(() => {
     const newWidth = 55 + selection * 8 + 0.5;
     setCurrentWidth(newWidth);
-  }, [selection, currentWidth]);
+  }, [selection]);
 
   useEffect(() => {
-
     const changeBackground = () => {
       if (window.scrollY < 200) {
         setScrollDirection(true);
@@ -29,12 +27,49 @@ const MainCTN = () => {
       }
     };
 
-    changeBackground();
+    const determineCurrentSection = () => {
+      const introSection = document.getElementById('intro');
+      const aboutSection = document.getElementById('about');
+      const skillsSection = document.getElementById('skills');
+      const workSection = document.getElementById('work');
+      const contactSection = document.getElementById('contact');
 
-    window.addEventListener('scroll', changeBackground);
+      const sections = [
+        { id: 'intro', cValue: 1, node: introSection },
+        { id: 'about', cValue: 2, node: aboutSection },
+        { id: 'skills', cValue: 3, node: skillsSection },
+        { id: 'work', cValue: 4, node: workSection },
+        { id: 'contact', cValue: 5, node: contactSection },
+      ];
+
+      const currentScrollPosition = window.scrollY + window.innerHeight / 2;
+
+      for (const section of sections) {
+        if (
+          section.node &&
+          currentScrollPosition >= section.node.offsetTop &&
+          currentScrollPosition < section.node.offsetTop + section.node.offsetHeight
+        ) {
+          setCurrentSection(section.id);
+          setSelection(section.cValue);
+          break;
+        }
+      }
+    };
+
+    changeBackground();
+    determineCurrentSection();
+
+    window.addEventListener('scroll', () => {
+      changeBackground();
+      determineCurrentSection();
+    });
 
     return () => {
-      window.removeEventListener('scroll', changeBackground);
+      window.removeEventListener('scroll', () => {
+        changeBackground();
+        determineCurrentSection();
+      });
     };
   }, []);
 
@@ -46,13 +81,12 @@ const MainCTN = () => {
         }`}>
         <div className='w-full h-full  flex justify-end items-center font-bold font-title'>
           <figure
-            className='transition-all duration-300 flex justify-center items-center absolute bottom-0 left-0 h-[2px] bg-selected'
+            className='transition-all duration-500 flex justify-center items-center absolute bottom-0 left-0 h-[2px] bg-selected'
             style={{ width: `${currentWidth}%` }}
           />
           <div className='flex justify-end items-center w-[40%] h-full text-right'>
             <Link
               href={'#intro'}
-              onClick={() => setSelection(1)}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
                 selection === 1 ? 'text-selected' : 'text-vTitle'
               }`}>
@@ -61,7 +95,6 @@ const MainCTN = () => {
 
             <Link
               href={'#about'}
-              onClick={() => setSelection(2)}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
                 selection === 2 ? 'text-selected' : 'text-vTitle'
               }`}>
@@ -70,7 +103,6 @@ const MainCTN = () => {
 
             <Link
               href={'#skills'}
-              onClick={() => setSelection(3)}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
                 selection === 3 ? 'text-selected' : 'text-vTitle'
               }`}>
@@ -78,7 +110,6 @@ const MainCTN = () => {
             </Link>
             <Link
               href={'#work'}
-              onClick={() => setSelection(4)}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
                 selection === 4 ? 'text-selected' : 'text-vTitle'
               }`}>
@@ -86,7 +117,6 @@ const MainCTN = () => {
             </Link>
             <Link
               href={'#contact'}
-              onClick={() => setSelection(5)}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
                 selection === 5 ? 'text-selected' : 'text-vTitle'
               }`}>

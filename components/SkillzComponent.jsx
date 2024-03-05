@@ -22,7 +22,7 @@ import typescriptIcon from '@/public/typescriptIcon.svg';
 const SkillzComponent = () => {
   const mainTools = [
     { name: 'HTML', img: htmlIcon },
-    { name: 'CSS3', img: cssIcon },
+    { name: 'CSS', img: cssIcon },
     { name: 'Tailwind', img: tailwindIcon },
     { name: 'JavaScript', img: javaScriptIcon },
     { name: 'TypeScript', img: typescriptIcon },
@@ -51,7 +51,9 @@ const SkillzComponent = () => {
         <TitleText num={'02.'} nTitle={'Skills'} />
 
         <p className='my-[50px] font-tag text-xl'>
-          // These are some of the programs/languages/tools I have picked along the way
+        {`//`} From coding languages to handy tools, take a peek at some of the stuff I've learned as a
+          web developer. This lineup showcases my journey of curiosity and growth That will only
+          keep growing in the future.
         </p>
         <div className='my-[60px] w-full flex items-center justify-center gap-[50px]'>
           <Image src={openBracket} alt='openBracket' className='mix-blend-screen' />
