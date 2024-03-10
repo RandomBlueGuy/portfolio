@@ -6,6 +6,7 @@ import plusSign from '@/public/plus.svg';
 
 const XPfile = ({ index, project }) => {
   const [viewMore, setViewMore] = useState(false);
+
   return (
     <div className='w-full  overflow-hidden relative transition-all duration-300 '>
       <figure
@@ -14,7 +15,9 @@ const XPfile = ({ index, project }) => {
         }}
         className='group cursor-pointer z-10 relative border-b-2 text-vBlue flex items-center justify-between w-full px-[20px] py-[5px] border-b-vBlue/20 overflow-hidden transition-all duration-300 '>
         <div
-          className={`-z-0 ${!viewMore ? "w-[0%]" : "w-[100%]"} group-hover:w-[100%] left-0 transition-all ease-[cubic-bezier(0.5,1,0.5,1)] h-full absolute top-0 ${
+          className={`-z-0 ${
+            !viewMore ? 'w-[0%]' : 'w-[100%]'
+          } group-hover:w-[100%] left-0 transition-all ease-[cubic-bezier(0.5,1,0.5,1)] h-full absolute top-0 ${
             index % 2 === 0 ? ' duration-1000' : 'duration-[1000ms]'
           } bg-vBlue/30`}
           style={{ pointerEvents: 'none' }}
@@ -38,9 +41,12 @@ const XPfile = ({ index, project }) => {
         </figure>
         <div className='w-full flex flex-col justify-between pt-[0.5rem]'>
           <div>
-            <h4 className='text-selected mb-[20px] text-xl font-medium w-full flex justify-between'>[ PROJECT INFORMATION ]             <span className='text-selected/50 mb-[20px] text-lg text-right font-light'>
-              [ Role: <span className='text-vWhite/50'>{project.role}</span> ]
-            </span></h4>
+            <h4 className='text-selected mb-[20px] text-xl font-medium w-full flex justify-between'>
+              [ PROJECT INFORMATION ]{' '}
+              <span className='text-selected/50 mb-[20px] text-lg text-right font-light'>
+                [ Role: <span className='text-vWhite/50'>{project.role}</span> ]
+              </span>
+            </h4>
 
             <p className='text-base'>{project.description}</p>
           </div>
@@ -54,24 +60,40 @@ const XPfile = ({ index, project }) => {
             ))}
           </div>
           <div className='flex gap-[2rem] self-end'>
-            <button className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px]'>
-              <div
-                className='-z-0 w-[0%] group-hover:w-[100%] transition-all duration-500 h-full absolute top-0 left-0 bg-selected rounded-[5px]'
-                style={{ pointerEvents: 'none' }}
-              />
-              <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
-                View Code
-              </span>
-            </button>
-            <button className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px]'>
-              <div
-                className='-z-0 w-[0%] group-hover:w-[100%] transition-all duration-500 h-full absolute top-0 left-0 bg-selected rounded-[5px]'
-                style={{ pointerEvents: 'none' }}
-              />
-              <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
-                Visit Project
-              </span>
-            </button>
+            {project?.repositoryURL && project?.repositoryURL !== '' ? (
+              <button className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px]'>
+                <div
+                  className='-z-0 w-[0%] group-hover:w-[100%] transition-all duration-500 h-full absolute top-0 left-0 bg-selected rounded-[5px]'
+                  style={{ pointerEvents: 'none' }}
+                />
+                <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
+                  View Code
+                </span>
+              </button>
+            ) : (
+              <button className='relative box-border  border-2 border-gray-600 bg-gray-600 rounded-[5px] text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px] hover:scale-100 cursor-not-allowed'>
+                <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
+                  NDA Locked {project?.repositoryURL}
+                </span>
+              </button>
+            )}
+            {project?.websiteURL !== '' ? (
+              <button className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px]'>
+                <div
+                  className='-z-0 w-[0%] group-hover:w-[100%] transition-all duration-500 h-full absolute top-0 left-0 bg-selected rounded-[5px]'
+                  style={{ pointerEvents: 'none' }}
+                />
+                <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
+                  Visit Project 
+                </span>
+              </button>
+            ) : (
+              <button className='relative box-border  border-2 border-gray-600 bg-gray-600 rounded-[5px] text-vWhite font-bold font-tag w-[120px] h-[40px] px-[12px] hover:scale-100 cursor-not-allowed'>
+                <span className='absolute inset-0 z-10 w-full h-full flex justify-center items-center'>
+                 404
+                </span>
+              </button>
+            )}
           </div>
         </div>
       </article>

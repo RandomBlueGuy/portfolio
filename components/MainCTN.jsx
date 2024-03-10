@@ -18,6 +18,9 @@ const MainCTN = () => {
     setCurrentWidth(newWidth);
   }, [selection]);
 
+
+  
+
   useEffect(() => {
     const changeBackground = () => {
       if (window.scrollY < 200) {
