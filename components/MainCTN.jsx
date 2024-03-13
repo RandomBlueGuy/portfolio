@@ -18,9 +18,6 @@ const MainCTN = () => {
     setCurrentWidth(newWidth);
   }, [selection]);
 
-
-  
-
   useEffect(() => {
     const changeBackground = () => {
       if (window.scrollY < 200) {
@@ -62,7 +59,7 @@ const MainCTN = () => {
 
     changeBackground();
     determineCurrentSection();
-
+    
     window.addEventListener('scroll', () => {
       changeBackground();
       determineCurrentSection();
@@ -87,6 +84,7 @@ const MainCTN = () => {
             className='transition-all duration-500 flex justify-center items-center absolute bottom-0 left-0 h-[2px] bg-selected'
             style={{ width: `${currentWidth}%` }}
           />
+          
           <div className='flex justify-end items-center w-[40%] h-full text-right'>
             <Link
               href={'#intro'}
@@ -111,6 +109,7 @@ const MainCTN = () => {
               }`}>
               02. Skills
             </Link>
+
             <Link
               href={'#work'}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
@@ -118,6 +117,7 @@ const MainCTN = () => {
               }`}>
               03. Work
             </Link>
+
             <Link
               href={'#contact'}
               className={`flex flex-1 items-end pb-[10px] justify-end h-full ${
@@ -126,13 +126,13 @@ const MainCTN = () => {
               04. Contact
             </Link>
           </div>
-          <div className='w-[5%]'></div>
+          <div className='w-[5%]' />
         </div>
       </nav>
+      
       <IntroComponent />
       <AboutComponent />
       <SkillzComponent />
-
       <WorkComponent />
       <ContactComponent />
 
