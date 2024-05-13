@@ -8,7 +8,7 @@ const XPcard = () => {
         <h3 className='absolute bottom-0 text-selected mb-[10px]'>[ INSERT COOL PROJECT TITLE ]</h3>
       </div>
       <div className='p-[20px] flex flex-col gap-[15px]'>
-        <button className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold font-tag h-[40px] px-[12px]'>
+        <button className='relative box-border group transition-all duration-300 border-2 border-selected rounded-[5px] hover:border-0 text-vWhite font-bold  h-[40px] px-[12px]'>
           <div className='w-[0%] group-hover:w-[100%]  transition-all duration-500 h-full absolute top-0 left-0 bg-selected rounded-[5px]'></div>
           <span className='absolute inset-0 w-full h-full flex justify-center items-center'>
             View More

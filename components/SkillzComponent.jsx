@@ -47,13 +47,15 @@ const SkillzComponent = () => {
     <div
       id='skills'
       className='relative w-full h-fit flex flex-shrink-0 flex-col justify-center items-center py-[200px]'>
-      <div className='w-full  flex flex-col'>
+      <figure className='-z-0 blur-[150px] mix-blend-lighten bg-[radial-gradient(rgba(0,100,255,0.2)_0%,rgba(0,100,255,0.1))] rounded-full w-full h-auto aspect-square absolute ' />
+
+      <div className='z-10 w-full  flex flex-col'>
         <TitleText num={'02.'} nTitle={'Skills'} />
 
-        <p className='my-[50px] font-tag text-xl'>
-        {`//`} From coding languages to handy tools, take a peek at some of the stuff I've learned as a
-          web developer. This lineup showcases my journey of curiosity and growth That will only
-          keep growing in the future.
+        <p className='my-[50px] text-xl'>
+          {`//`} From coding languages to handy tools, take a peek at some of the stuff I've learned
+          as a web developer. This lineup showcases my journey of curiosity and growth That will
+          only keep growing in the future.
         </p>
         <div className='my-[60px] w-full flex items-center justify-center gap-[50px]'>
           <Image src={openBracket} alt='openBracket' className='mix-blend-screen' />
@@ -77,7 +79,7 @@ const SkillzComponent = () => {
           <Image src={openBracket} alt='closeBracket' className='rotate-180 mix-blend-screen' />
         </div>
 
-        <p className='my-[50px] font-tag text-xl'>
+        <p className='my-[50px]  text-xl'>
           // And these are some other ones I've used for personal projects [ Game Development,
           Modding ]{' '}
         </p>

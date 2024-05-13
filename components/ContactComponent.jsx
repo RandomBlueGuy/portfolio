@@ -28,7 +28,7 @@ const ContactComponent = () => {
             href={'/'}
             className='hover:scale-110 transition-all duration-300 flex flex-col gap-[20px] items-center'>
             <Image src={linkedin} alt='linkedin Icon' className='w-[50px] aspect-square' />
-            <span className=''>LinkdIn</span>
+            <span className=''>LinkedIn</span>
           </Link>
           <Link
             href={'/'}
